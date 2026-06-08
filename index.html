@@ -106,15 +106,6 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
   background:linear-gradient(to bottom,transparent 0%,color-mix(in srgb,var(--surface) 60%,transparent) 60%,var(--surface) 100%);
 }
 
-/* ============ DIVIDER ENVELOPE ============ */
-.divider-env{
-  position:relative;text-align:center;
-  padding:clamp(40px,7vw,72px) 0;
-  overflow:hidden;background:var(--surface);
-}
-.divider-env::before{content:"";position:absolute;left:0;right:0;top:0;height:80px;background:linear-gradient(to bottom,var(--surface),transparent);z-index:2;pointer-events:none;}
-.divider-env::after{content:"";position:absolute;left:0;right:0;bottom:0;height:80px;background:linear-gradient(to top,var(--surface),transparent);z-index:2;pointer-events:none;}
-.divider-env-img{display:block;width:min(480px,90vw);height:auto;margin:0 auto;border-radius:8px;box-shadow:0 12px 48px rgba(31,43,166,.22),0 3px 12px rgba(31,43,166,.12);position:relative;z-index:1;}
 .hero-content{position:relative;z-index:1;text-align:center;color:var(--ink);padding:40px 32px;max-width:960px;}
 .hero-ornament-top{display:block;margin:0 auto 28px;width:180px;height:auto;opacity:.9}
 .hero-eyebrow{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.6em;text-transform:uppercase;color:var(--gold-deep);padding-left:.6em;margin-bottom:40px;display:inline-block;}
@@ -288,19 +279,16 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
   .iz-desc{font-size:10.5px;}
 }
 
-/* ============ GALERÍA ============ */
+/* ============ GALERÍA — RUEDA 3D ============ */
 .gallery{text-align:center}
 .gallery h2{font-size:clamp(36px,5vw,60px);margin-bottom:20px}
-.gallery-sub{font-family:var(--italiana);font-size:18px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);padding-left:.3em;margin-bottom:64px}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1080px;margin:0 auto;}
-.gallery-item{overflow:hidden;border-radius:2px;border:1px solid var(--hair-gold);position:relative;aspect-ratio:4/5;}
-.gallery-item:nth-child(2),.gallery-item:nth-child(5){aspect-ratio:4/3;}
-.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1);}
-.gallery-item:hover img{transform:scale(1.05);}
-@media(max-width:640px){
-  .gallery-grid{grid-template-columns:repeat(2,1fr);}
-  .gallery-item:nth-child(2),.gallery-item:nth-child(5){aspect-ratio:4/5;}
-}
+.gallery-sub{font-family:var(--italiana);font-size:18px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);padding-left:.3em;margin-bottom:40px}
+.wheel-scene{position:relative;width:100%;height:520px;margin:40px auto 0;perspective:1400px;transform-style:preserve-3d;overflow:visible;}
+.wheel-ring{position:absolute;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;}
+.wheel-ring.dragging{cursor:grabbing}
+.wheel-card{position:absolute;width:200px;height:280px;left:50%;top:50%;margin-left:-100px;margin-top:-140px;border-radius:18px;overflow:hidden;border:2px solid rgba(174,135,222,.35);box-shadow:0 12px 40px rgba(31,43,166,.20);user-select:none;-webkit-user-select:none;}
+.wheel-card img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none;}
+.gal-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:3px;color:var(--accent-soft);margin-top:24px;opacity:.7;display:block;}
 
 /* ============ KIDS POLICY ============ */
 .kids{text-align:center;padding:min(12vh,100px) 0;position:relative;overflow:hidden;}
@@ -497,11 +485,6 @@ footer{background:linear-gradient(160deg,#ae87de 0%,#8faee8 35%,#B8C8F0 65%,#E8E
     </div>
     <div class="hero-scroll">Descubre</div>
   </section>
-
-  <!-- IMAGEN DECORATIVA -->
-  <div class="divider-env">
-    <img class="divider-env-img" src="./divider-envelope.jpg" alt="" role="presentation" loading="lazy">
-  </div>
 
   <!-- FRASE INICIAL -->
   <section class="section-surface versiculo">
@@ -912,33 +895,24 @@ footer{background:linear-gradient(160deg,#ae87de 0%,#8faee8 35%,#B8C8F0 65%,#E8E
 
   <div class="seam" style="--from:var(--bg);--to:var(--surface)" aria-hidden="true"></div>
 
-  <!-- GALERÍA -->
+  <!-- GALERÍA — RUEDA 3D -->
   <section class="section-surface gallery">
     <div class="container">
       <div class="eyebrow">Nuestra historia</div>
       <h2>Una <em>mirada</em> a nuestro amor</h2>
       <div class="gallery-sub">Cecilia &amp; Héctor</div>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/b455ee72-919c-41d0-8a30-1964d082dde0/1780373813140-0.jpg" alt="Cecilia y Héctor" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/b455ee72-919c-41d0-8a30-1964d082dde0/1780373825446-0.jpg" alt="Cecilia y Héctor" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/b455ee72-919c-41d0-8a30-1964d082dde0/1780373843904-0.jpg" alt="Cecilia y Héctor" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/b455ee72-919c-41d0-8a30-1964d082dde0/1780376077741-0.jpg" alt="Cecilia y Héctor" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/b455ee72-919c-41d0-8a30-1964d082dde0/1780376162825-0.jpg" alt="Cecilia y Héctor" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/b455ee72-919c-41d0-8a30-1964d082dde0/1780376666217-0.jpg" alt="Cecilia y Héctor" loading="lazy">
-        </div>
+    </div>
+    <div class="wheel-scene" id="wheel-scene">
+      <div class="wheel-ring" id="wheel-ring">
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/b455ee72-919c-41d0-8a30-1964d082dde0/1780373813140-0.jpg" alt="Cecilia y Héctor" loading="lazy"></div>
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/b455ee72-919c-41d0-8a30-1964d082dde0/1780373825446-0.jpg" alt="Cecilia y Héctor" loading="lazy"></div>
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/b455ee72-919c-41d0-8a30-1964d082dde0/1780373843904-0.jpg" alt="Cecilia y Héctor" loading="lazy"></div>
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/b455ee72-919c-41d0-8a30-1964d082dde0/1780376077741-0.jpg" alt="Cecilia y Héctor" loading="lazy"></div>
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/b455ee72-919c-41d0-8a30-1964d082dde0/1780376162825-0.jpg" alt="Cecilia y Héctor" loading="lazy"></div>
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/b455ee72-919c-41d0-8a30-1964d082dde0/1780376666217-0.jpg" alt="Cecilia y Héctor" loading="lazy"></div>
       </div>
     </div>
+    <span class="gal-hint">Arrastra para girar</span>
   </section>
 
   <div class="seam" style="--from:var(--surface);--to:var(--bg)" aria-hidden="true"></div>
@@ -1208,7 +1182,6 @@ if(document.querySelector('.verse-text')){
   gsap.fromTo('.verse-ornament',{opacity:0,y:30,scale:.9},{opacity:1,y:0,scale:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.verse-wrap',start:'top 80%'}});
   gsap.fromTo('.verse-quote',{opacity:0,scale:.5,rotate:-10},{opacity:.8,scale:1,rotate:0,duration:1.3,ease:'back.out(1.4)',scrollTrigger:{trigger:'.verse-wrap',start:'top 80%'}});
   gsap.fromTo(verseWords,{opacity:0,y:24},{opacity:1,y:0,duration:.9,stagger:.05,ease:'power3.out',scrollTrigger:{trigger:'.verse-text',start:'top 82%'}});
-  gsap.fromTo('.divider-env-img',{opacity:0,scale:.92,y:20},{opacity:1,scale:1,y:0,duration:1.3,ease:'power3.out',scrollTrigger:{trigger:'.divider-env',start:'top 80%'}});
 }
 
 // ------ DATE HERO ------
@@ -1319,8 +1292,26 @@ gsap.fromTo('.dress .eyebrow,.dress h2',{opacity:0,y:14},{opacity:1,y:0,duration
 })();
 gsap.fromTo('.dress-avoid',{opacity:0,y:24},{opacity:1,y:0,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'.dress-avoid',start:'top 88%'}});
 
-// ------ GALERÍA ------
-gsap.fromTo('.gallery-item',{opacity:0,y:40,scale:.97},{opacity:1,y:0,scale:1,duration:1.1,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'.gallery-grid',start:'top 82%'}});
+// ------ GALERÍA — RUEDA 3D ------
+(function initWheel(){
+  var cards = document.querySelectorAll('.wheel-card');
+  var ring  = document.getElementById('wheel-ring');
+  if (!ring || cards.length === 0) return;
+  var n = cards.length;
+  var radius = 280;
+  var rot = 0, vel = 0, isDrag = false, startX = 0, startRot = 0, lastX = 0, rafId = null;
+  cards.forEach(function(card, i){
+    card.style.transform = 'rotateY(' + (360 / n * i) + 'deg) translateZ(' + radius + 'px)';
+  });
+  function setRot(r){ rot = r; gsap.set(ring, { rotateY: rot }); }
+  function inertia(){ if(Math.abs(vel) < 0.05){ vel = 0; return; } vel *= 0.94; setRot(rot + vel); rafId = requestAnimationFrame(inertia); }
+  ring.addEventListener('mousedown', function(e){ cancelAnimationFrame(rafId); isDrag = true; vel = 0; startX = e.clientX; startRot = rot; lastX = e.clientX; ring.classList.add('dragging'); });
+  window.addEventListener('mousemove', function(e){ if(!isDrag) return; var dx = e.clientX - startX; vel = (e.clientX - lastX) * 0.5; lastX = e.clientX; setRot(startRot + dx * 0.45); });
+  window.addEventListener('mouseup', function(){ if(!isDrag) return; isDrag = false; ring.classList.remove('dragging'); rafId = requestAnimationFrame(inertia); });
+  ring.addEventListener('touchstart', function(e){ cancelAnimationFrame(rafId); isDrag = true; vel = 0; startX = e.touches[0].clientX; startRot = rot; lastX = startX; }, { passive: true });
+  window.addEventListener('touchmove', function(e){ if(!isDrag) return; var dx = e.touches[0].clientX - startX; vel = (e.touches[0].clientX - lastX) * 0.5; lastX = e.touches[0].clientX; setRot(startRot + dx * 0.45); }, { passive: true });
+  window.addEventListener('touchend', function(){ if(!isDrag) return; isDrag = false; rafId = requestAnimationFrame(inertia); });
+})();
 
 // ------ KIDS ------
 gsap.fromTo('.kids-card',{opacity:0,y:40,scale:.97},{opacity:1,y:0,scale:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.kids-card',start:'top 82%'}});
