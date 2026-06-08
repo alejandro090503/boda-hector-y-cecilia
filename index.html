@@ -303,12 +303,20 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 /* ============ GIFTS ============ */
 .gifts-head{text-align:center;margin-bottom:56px;max-width:640px;margin-left:auto;margin-right:auto}
 .gifts-sub{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--ink-soft);line-height:1.7;margin-top:16px;font-weight:600}
-.gift-card{background:var(--bg);padding:48px 32px 40px;border:1px solid var(--hair-gold);text-align:center;position:relative;box-shadow:0 2px 8px rgba(31,43,166,.06),0 12px 36px -12px rgba(31,43,166,.15);max-width:520px;margin:0 auto}
-.gift-card::before{content:"";position:absolute;inset:8px;border:1px solid var(--hair-gold);pointer-events:none;opacity:.5;}
-.gift-icon{width:60px;height:60px;margin:0 auto 24px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--paper);border:1px solid var(--hair-gold);color:var(--gold-deep);}
-.gift-name{font-family:var(--display);font-size:28px;color:var(--accent-deep);margin-bottom:16px;font-weight:600}
-.gift-desc{font-family:var(--sans);font-size:15px;color:var(--ink-soft);line-height:1.85;margin-bottom:0;font-weight:600}
-.gift-pending{font-family:var(--italiana);font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-deep);margin-top:24px;padding-left:.4em;opacity:.85}
+/* Sobre interactivo (lluvia de sobres) */
+.env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;border:none;background:none;padding:0;}
+.env-body{perspective:700px;position:relative;width:260px;height:200px;animation:env-breathe 3.6s ease-in-out infinite;}
+.env-body svg.env-svg{width:100%;height:100%;}
+.env-flap-wrap{position:absolute;top:46px;left:18px;width:224px;height:86px;transform-origin:top center;transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .65s cubic-bezier(.4,0,.2,1);pointer-events:none;z-index:2;}
+.env-interactive.open .env-flap-wrap{transform:rotateX(-175deg);}
+.env-open-content{overflow:hidden;max-height:0;opacity:0;transition:max-height .55s .3s ease,opacity .4s .38s ease;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 20px;text-align:center;pointer-events:none;}
+.env-interactive.open .env-open-content{max-height:240px;opacity:1;pointer-events:auto;}
+.env-mailbox-icon{width:40px;height:40px;color:var(--gold);margin-top:10px;}
+.env-title{font-family:var(--script);font-size:30px;color:var(--ink);letter-spacing:.5px;line-height:1.2;}
+.env-desc{font-family:var(--serif);font-size:14px;font-style:italic;color:var(--ink-soft);line-height:1.75;font-weight:600;}
+.env-tap-hint{font-family:var(--sans);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:6px;transition:opacity .3s;}
+.env-interactive.open~.env-tap-hint{opacity:0;pointer-events:none;}
+@keyframes env-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
 
 /* ============ ALBUM QR ============ */
 .album{text-align:center;padding:min(14vh,120px) 0}
@@ -428,7 +436,7 @@ footer{background:linear-gradient(160deg,#ae87de 0%,#8faee8 35%,#B8C8F0 65%,#E8E
 
 <!-- ENVELOPE OPENING -->
 <div id="envelope-screen" role="button" aria-label="Toca para abrir la invitación" tabindex="0">
-  <img id="env-cover" src="./envelope-cover.jpg" alt="Sobre con sello H &amp; C" fetchpriority="high">
+  <img id="env-cover" src="./envelope-cover.png" alt="Sobre con sello H &amp; C" fetchpriority="high">
   <video id="env-video" src="./envelope-open.mp4" muted playsinline preload="auto" aria-hidden="true"></video>
   <div id="env-hint">Toca para abrir</div>
 </div>
@@ -943,20 +951,60 @@ footer{background:linear-gradient(160deg,#ae87de 0%,#8faee8 35%,#B8C8F0 65%,#E8E
         <h2>Nuestra <em>mesa</em> de regalos</h2>
         <p class="gifts-sub">Tu presencia es nuestro mejor regalo. Si además deseas obsequiarnos algo, con una lluvia de sobres nos harás muy felices.</p>
       </div>
-      <div class="gift-card">
-        <div class="gift-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 12v10H4V12"/>
-            <path d="M22 7H2v5h20V7z"/>
-            <path d="M12 22V7"/>
-            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
-            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
-          </svg>
-        </div>
-        <div class="gift-name">Lluvia de sobres</div>
-        <div class="gift-desc">Si deseas hacernos un regalo, una aportación en efectivo o transferencia bancaria es siempre muy bienvenida.</div>
-        <!-- PENDIENTE: datos CLABE / cuenta del cliente -->
-        <div class="gift-pending">Datos de transferencia por confirmar</div>
+      <div style="margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:0;">
+        <!-- Sobre interactivo lluvia de sobres -->
+        <button class="env-interactive" aria-label="Sobre — toca para abrir" aria-expanded="false">
+          <div class="env-body">
+            <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="hc-env-fill" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#f0ebfa"/>
+                  <stop offset="100%" stop-color="#f7f4fd"/>
+                </linearGradient>
+              </defs>
+              <!-- Cuerpo -->
+              <rect x="18" y="52" width="224" height="132" rx="10"
+                    fill="url(#hc-env-fill)" stroke="rgba(174,135,222,.7)" stroke-width="1.4"/>
+              <!-- V central (pliegue inferior) -->
+              <path d="M18 184 L130 110 L242 184" stroke="rgba(174,135,222,.5)" stroke-width="1" fill="none"/>
+              <!-- Líneas decorativas (lluvia) -->
+              <line x1="90"  y1="30" x2="90"  y2="20" stroke="#ae87de" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+              <line x1="130" y1="24" x2="130" y2="14" stroke="#ae87de" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
+              <line x1="170" y1="30" x2="170" y2="20" stroke="#ae87de" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+              <line x1="110" y1="18" x2="110" y2="10" stroke="#c5a8e8" stroke-width="1"   stroke-linecap="round" opacity=".4"/>
+              <line x1="150" y1="18" x2="150" y2="10" stroke="#c5a8e8" stroke-width="1"   stroke-linecap="round" opacity=".4"/>
+              <!-- Sello H&C -->
+              <circle cx="130" cy="118" r="16" fill="rgba(174,135,222,.18)" stroke="rgba(174,135,222,.55)" stroke-width="1"/>
+              <text x="130" y="123" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1f2ba6" opacity=".8">H&amp;C</text>
+            </svg>
+            <!-- Solapa animable -->
+            <div class="env-flap-wrap" aria-hidden="true">
+              <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%">
+                <defs>
+                  <linearGradient id="hc-flap-fill" x1="0" y1="1" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#c5a8e8"/>
+                    <stop offset="100%" stop-color="#f0ebfa"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 0 L112 86 L224 0 Z"
+                      fill="url(#hc-flap-fill)" stroke="rgba(174,135,222,.7)" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <!-- Contenido revelado -->
+          <div class="env-open-content" aria-live="polite">
+            <svg class="env-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="8" y="22" width="36" height="24" rx="5"/>
+              <path d="M8 30 Q26 38 44 30"/>
+              <rect x="18" y="8" width="16" height="16" rx="2"/>
+              <path d="M18 8 Q26 3 34 8"/>
+              <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
+            </svg>
+            <p class="env-title">Lluvia de sobres</p>
+            <p class="env-desc">En la celebración habrá una caja especial<br>donde podrás depositar tu sobre con todo tu cariño.</p>
+          </div>
+        </button>
+        <p class="env-tap-hint">Toca el sobre para abrir</p>
       </div>
     </div>
   </section>
@@ -1316,9 +1364,21 @@ gsap.fromTo('.dress-avoid',{opacity:0,y:24},{opacity:1,y:0,duration:1.1,ease:'po
 // ------ KIDS ------
 gsap.fromTo('.kids-card',{opacity:0,y:40,scale:.97},{opacity:1,y:0,scale:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.kids-card',start:'top 82%'}});
 
-// ------ GIFTS ------
+// ------ GIFTS / LLUVIA DE SOBRES ------
 gsap.fromTo('.gifts-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.1,scrollTrigger:{trigger:'.gifts-head',start:'top 80%'}});
-gsap.fromTo('.gift-card',{opacity:0,y:60,rotateY:-15,scale:.95},{opacity:1,y:0,rotateY:0,scale:1,duration:1.2,ease:'power4.out',scrollTrigger:{trigger:'.gift-card',start:'top 82%'}});
+(function(){
+  var btn = document.querySelector('.env-interactive');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var isOpen = btn.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  btn.addEventListener('touchstart', function(e){
+    e.preventDefault();
+    var isOpen = btn.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }, {passive:false});
+})();
 
 // ------ ALBUM ------
 gsap.fromTo('.album-card',{opacity:0,y:40,scale:.97},{opacity:1,y:0,scale:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.album-card',start:'top 82%'}});
