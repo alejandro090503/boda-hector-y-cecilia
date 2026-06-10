@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -24,19 +24,19 @@
 html{scroll-behavior:smooth;}
 body{
   font-family:'Lato',sans-serif;font-weight:300;font-size:13px;
-  color:#2A1A3E;background:#F8F3FC;line-height:1.7;overflow-x:hidden;
+  color:#1A1A2A;background:#F4EDE0;line-height:1.7;overflow-x:hidden;
 }
 :root{
-  --bg:#F8F3FC;
-  --accent:#5A9ED8;
-  --dark:#2A4A8A;
-  --text:#2A1A3E;
-  --surface:#EFE3F7;
+  --bg:#F4EDE0;
+  --accent:#1B3A6B;
+  --dark:#0E2347;
+  --text:#1A1A2A;
+  --surface:#EBE0CF;
   --card:#FFFFFF;
-  --rose:#E890B8;
-  --rose-light:#F5C8DC;
-  --lila:#9B7ED4;
-  --celeste:#7AACE8;
+  --rose:#C9A253;
+  --rose-light:#EDD5A0;
+  --lila:#D4B88C;
+  --celeste:#4A6A9C;
 }
 .wrap{max-width:430px;margin:0 auto;background:var(--bg);position:relative;overflow:clip;z-index:1;}
 
@@ -48,7 +48,7 @@ body{
 }
 
 /* ── HERO ── */
-.hero{position:relative;width:100%;min-height:100dvh;display:flex;flex-direction:column;background:#2A1040;}
+.hero{position:relative;width:100%;min-height:100dvh;display:flex;flex-direction:column;background:#0E2347;}
 .hero-bg{
   position:absolute;inset:0;
   background:url('./header-inv.jpg') center top/cover no-repeat;
@@ -57,11 +57,11 @@ body{
   position:absolute;inset:0;
   background:linear-gradient(
     to bottom,
-    rgba(42,16,64,0.10) 0%,
-    rgba(42,16,64,0.04) 30%,
-    rgba(42,16,64,0.40) 62%,
-    rgba(42,16,64,0.85) 82%,
-    #F8F3FC 100%
+    rgba(14,35,71,0.10) 0%,
+    rgba(14,35,71,0.04) 30%,
+    rgba(14,35,71,0.40) 62%,
+    rgba(14,35,71,0.85) 82%,
+    #F4EDE0 100%
   );
 }
 .hero-bottom{position:relative;z-index:3;margin-top:auto;padding:0 28px 60px;text-align:center;}
@@ -73,7 +73,7 @@ body{
 .hero-names{
   font-family:'Great Vibes',cursive;font-size:58px;line-height:1.05;
   color:#FFFFFF;margin-bottom:14px;
-  text-shadow:0 3px 32px rgba(42,16,64,.55);
+  text-shadow:0 3px 32px rgba(14,35,71,.55);
   transform:translateY(30px);opacity:0;
 }
 .hero-amp{
@@ -82,8 +82,8 @@ body{
 }
 .hero-badge{
   display:inline-flex;align-items:center;gap:12px;padding:8px 24px;
-  border:1px solid rgba(245,200,220,.5);border-radius:30px;
-  background:rgba(42,16,64,.4);backdrop-filter:blur(4px);
+  border:1px solid rgba(237,213,160,.5);border-radius:30px;
+  background:rgba(14,35,71,.4);backdrop-filter:blur(4px);
   transform:translateY(16px);opacity:0;
 }
 .hero-badge span{
@@ -110,8 +110,8 @@ body{
 @keyframes orn-flow  {to{stroke-dashoffset:-22;}}
 @keyframes orn-flow-r{to{stroke-dashoffset:22;}}
 @keyframes orn-glow{
-  0%,100%{filter:drop-shadow(0 0 1px rgba(232,144,184,.35));}
-  50%    {filter:drop-shadow(0 0 9px rgba(245,200,220,.95)) drop-shadow(0 0 3px rgba(232,144,184,.6));}
+  0%,100%{filter:drop-shadow(0 0 1px rgba(201,162,83,.35));}
+  50%    {filter:drop-shadow(0 0 9px rgba(237,213,160,.95)) drop-shadow(0 0 3px rgba(201,162,83,.6));}
 }
 @media(prefers-reduced-motion:reduce){.orn svg polygon,.orn svg path{animation:none;}}
 
@@ -129,14 +129,14 @@ section{padding:60px 26px;}
 
 /* ── COUNTDOWN ── */
 .cd-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
-.cd-box{background:var(--card);border-radius:14px;padding:20px 4px;text-align:center;box-shadow:0 6px 36px rgba(42,16,64,.1);border-top:2px solid var(--rose);}
+.cd-box{background:var(--card);border-radius:14px;padding:20px 4px;text-align:center;box-shadow:0 6px 36px rgba(14,35,71,.1);border-top:2px solid var(--rose);}
 .cd-num{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--dark);line-height:1;font-weight:500;font-variant-numeric:tabular-nums;}
 .cd-lbl{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-top:6px;}
 
 /* ── UBICACIÓN ── */
 .loc-card{
   background:var(--card);border-radius:18px;padding:28px 22px;
-  box-shadow:0 6px 36px rgba(42,16,64,.1);margin-bottom:18px;text-align:center;
+  box-shadow:0 6px 36px rgba(14,35,71,.1);margin-bottom:18px;text-align:center;
   border-left:3px solid var(--rose);
 }
 .loc-card .lt{font-family:'Great Vibes',cursive;font-size:40px;color:var(--dark);margin-bottom:4px;}
@@ -164,32 +164,32 @@ section{padding:60px 26px;}
   top:0;bottom:0;width:1px;z-index:0;
   background:linear-gradient(to bottom,
     transparent 0%,
-    rgba(232,144,184,0.35) 10%,
-    rgba(122,172,232,0.25) 45%,
-    rgba(232,144,184,0.30) 80%,
+    rgba(201,162,83,0.35) 10%,
+    rgba(74,106,156,0.25) 45%,
+    rgba(201,162,83,0.30) 80%,
     transparent 100%);
 }
 .itv3-glow{
   position:absolute;left:50%;transform:translateX(-50%);
   top:0;width:5px;height:110px;
-  background:linear-gradient(to bottom,transparent,rgba(232,144,184,0.55) 20%,rgba(232,144,184,0.90) 50%,rgba(232,144,184,0.55) 80%,transparent);
+  background:linear-gradient(to bottom,transparent,rgba(201,162,83,0.55) 20%,rgba(201,162,83,0.90) 50%,rgba(201,162,83,0.55) 80%,transparent);
   filter:blur(3px);border-radius:6px;z-index:1;pointer-events:none;
 }
 .itv3-item{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 16px 4px;width:100%;}
 .itv3-gem{
   width:9px;height:9px;
-  background:linear-gradient(135deg,#F5C8DC 30%,#B8507A);
+  background:linear-gradient(135deg,#EDD5A0 30%,#8F6820);
   transform:rotate(45deg);border-radius:2px;
-  box-shadow:0 0 0 4px rgba(232,144,184,0.12),0 0 18px rgba(232,144,184,0.45);
+  box-shadow:0 0 0 4px rgba(201,162,83,0.12),0 0 18px rgba(201,162,83,0.45);
   margin-bottom:18px;flex-shrink:0;
 }
 .itv3-gem-blue{
-  background:linear-gradient(135deg,#A8CCF0 30%,#2A4A8A);
-  box-shadow:0 0 0 4px rgba(122,172,232,0.14),0 0 18px rgba(122,172,232,0.45);
+  background:linear-gradient(135deg,#8AA4C8 30%,#0E2347);
+  box-shadow:0 0 0 4px rgba(74,106,156,0.14),0 0 18px rgba(74,106,156,0.45);
 }
 .itv3-gem-lila{
-  background:linear-gradient(135deg,#C8B0F0 30%,#6A3A9A);
-  box-shadow:0 0 0 4px rgba(155,126,212,0.10),0 0 18px rgba(155,126,212,0.38);
+  background:linear-gradient(135deg,#E8D4A8 30%,#6A4A28);
+  box-shadow:0 0 0 4px rgba(212,184,140,0.10),0 0 18px rgba(212,184,140,0.38);
 }
 .itv3-time{
   font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;
@@ -217,12 +217,12 @@ section{padding:60px 26px;}
 .dc-fig-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:var(--rose);letter-spacing:1.5px;margin-top:5px;text-align:center;line-height:1.55;}
 #sdc{position:relative;overflow:hidden;}
 .dc-star-layer,.dc-glow-layer{position:absolute;inset:0;pointer-events:none;z-index:0;}
-.dc-glow-layer{background:radial-gradient(ellipse 80% 55% at 50% 50%,rgba(232,144,184,0) 0%,transparent 100%);animation:dcGlow 4.2s ease-in-out infinite;}
+.dc-glow-layer{background:radial-gradient(ellipse 80% 55% at 50% 50%,rgba(201,162,83,0) 0%,transparent 100%);animation:dcGlow 4.2s ease-in-out infinite;}
 @keyframes dcGlow{
-  0%,100%{background:radial-gradient(ellipse 80% 55% at 50% 50%,rgba(232,144,184,.0) 0%,transparent 100%);}
-  50%{background:radial-gradient(ellipse 80% 55% at 50% 50%,rgba(232,144,184,.11) 0%,rgba(245,200,220,.04) 60%,transparent 100%);}
+  0%,100%{background:radial-gradient(ellipse 80% 55% at 50% 50%,rgba(201,162,83,.0) 0%,transparent 100%);}
+  50%{background:radial-gradient(ellipse 80% 55% at 50% 50%,rgba(201,162,83,.11) 0%,rgba(237,213,160,.04) 60%,transparent 100%);}
 }
-.dc-sparkle{position:absolute;pointer-events:none;will-change:transform,opacity;color:var(--rose);filter:drop-shadow(0 0 5px rgba(245,200,220,.95));user-select:none;line-height:1;}
+.dc-sparkle{position:absolute;pointer-events:none;will-change:transform,opacity;color:var(--rose);filter:drop-shadow(0 0 5px rgba(237,213,160,.95));user-select:none;line-height:1;}
 #sdc .eyebrow,#sdc .sec-title,#sdc .dc-note,#sdc .dc-warn,#sdc .dc-figures{position:relative;z-index:1;}
 @media(prefers-reduced-motion:reduce){.dc-glow-layer{animation:none;}}
 
@@ -239,7 +239,7 @@ section{padding:60px 26px;}
 .gallery-sub{font-family:'Great Vibes',cursive;color:var(--rose);font-size:32px;line-height:1;margin-top:8px;}
 .wheel-stage{position:relative;width:100%;height:min(680px,108vw);max-width:680px;margin:0 auto;padding:clamp(20px,4vw,60px);display:flex;align-items:center;justify-content:center;}
 .wheel{position:relative;width:min(560px,92vw);height:min(560px,92vw);border-radius:50%;}
-.wheel-spoke{position:absolute;inset:-2px;border-radius:50%;border:1px solid rgba(232,144,184,0.30);}
+.wheel-spoke{position:absolute;inset:-2px;border-radius:50%;border:1px solid rgba(201,162,83,0.30);}
 .wheel-spoke--inner{inset:min(80px,15%);border-style:dashed;opacity:.5;}
 .wheel-item{
   position:absolute;
@@ -252,25 +252,25 @@ section{padding:60px 26px;}
   margin-top:calc(min(240px,36vw) / -2);
   transform:rotate(var(--angle)) translateY(calc(-1 * var(--r))) rotate(calc(-1 * var(--angle)));
   border-radius:8px;overflow:hidden;
-  box-shadow:0 8px 32px rgba(42,16,64,.2),0 1px 4px rgba(42,16,64,.1);
+  box-shadow:0 8px 32px rgba(14,35,71,.2),0 1px 4px rgba(14,35,71,.1);
 }
 .wheel-item-inner{position:relative;width:100%;height:100%;cursor:zoom-in;}
 .wheel-item-inner img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s ease;}
 .wheel-item-inner:hover img{transform:scale(1.05);}
 .wheel-hub{position:absolute;width:clamp(50px,7vw,80px);height:clamp(50px,7vw,80px);color:var(--rose);opacity:.6;}
 #wheel-spark-layer{position:absolute;inset:0;pointer-events:none;z-index:10;overflow:visible;}
-.wheel-spark{position:absolute;pointer-events:none;transform-origin:center center;will-change:transform,opacity;filter:drop-shadow(0 0 5px rgba(245,200,220,.9));}
+.wheel-spark{position:absolute;pointer-events:none;transform-origin:center center;will-change:transform,opacity;filter:drop-shadow(0 0 5px rgba(237,213,160,.9));}
 
 /* ── LIGHTBOX ── */
 #lightbox{position:fixed;inset:0;z-index:9990;display:none;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px);background:rgba(20,8,40,.85);backdrop-filter:blur(18px) saturate(1.15);-webkit-backdrop-filter:blur(18px) saturate(1.15);opacity:0;cursor:zoom-out;}
 #lightbox.is-open{display:flex;}
 #lightbox-img{max-width:min(94vw,1400px);max-height:min(86vh,1000px);width:auto;height:auto;object-fit:contain;border-radius:14px;box-shadow:0 28px 90px rgba(0,0,0,.6);opacity:0;transform:scale(.88);}
-#lightbox-close{position:absolute;top:clamp(16px,3vw,32px);right:clamp(16px,3vw,32px);width:48px;height:48px;border:1px solid rgba(232,144,184,.45);background:rgba(42,16,64,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:50%;color:#F8F5EC;font-size:26px;line-height:1;font-family:'Lato',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s;}
-#lightbox-close:hover{background:rgba(90,30,120,.8);transform:scale(1.08);}
+#lightbox-close{position:absolute;top:clamp(16px,3vw,32px);right:clamp(16px,3vw,32px);width:48px;height:48px;border:1px solid rgba(201,162,83,.45);background:rgba(14,35,71,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:50%;color:#F8F5EC;font-size:26px;line-height:1;font-family:'Lato',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s;}
+#lightbox-close:hover{background:rgba(10,24,48,.8);transform:scale(1.08);}
 
 /* ── MESA DE REGALOS ── */
 .gift-grid{display:flex;flex-direction:column;gap:16px;}
-.gift-card{background:var(--card);border-radius:18px;padding:22px;box-shadow:0 6px 36px rgba(42,16,64,.1);display:flex;align-items:center;gap:18px;}
+.gift-card{background:var(--card);border-radius:18px;padding:22px;box-shadow:0 6px 36px rgba(14,35,71,.1);display:flex;align-items:center;gap:18px;}
 .gift-logo-wrap{width:64px;height:64px;border-radius:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .gift-logo-wrap.bank{background:var(--dark);}
 .gift-body{flex:1;min-width:0;}
@@ -293,18 +293,18 @@ section{padding:60px 26px;}
 @keyframes env-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
 
 /* ── MAP EMBED ── */
-.map-wrap{margin:16px 0 4px;border-radius:10px;overflow:hidden;line-height:0;box-shadow:0 4px 18px rgba(42,16,64,.12);}
+.map-wrap{margin:16px 0 4px;border-radius:10px;overflow:hidden;line-height:0;box-shadow:0 4px 18px rgba(14,35,71,.12);}
 .map-wrap iframe{display:block;width:100%;height:200px;border:0;}
 
 /* ── ÁLBUM ── */
 .album-sub{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--text);letter-spacing:1px;margin-bottom:28px;line-height:1.7;padding:0 16px;}
 .album-qr-wrap{display:flex;justify-content:center;margin-bottom:22px;}
-.album-qr-frame{padding:18px;border-radius:20px;background:var(--card);box-shadow:0 6px 36px rgba(42,16,64,.1);border:1.5px solid rgba(232,144,184,.28);}
+.album-qr-frame{padding:18px;border-radius:20px;background:var(--card);box-shadow:0 6px 36px rgba(14,35,71,.1);border:1.5px solid rgba(201,162,83,.28);}
 .album-qr-frame img{display:block;border-radius:10px;}
-.album-hashtag{text-align:center;font-family:'Great Vibes',cursive;font-size:40px;color:var(--rose);filter:drop-shadow(0 0 10px rgba(232,144,184,.4));margin-top:4px;}
+.album-hashtag{text-align:center;font-family:'Great Vibes',cursive;font-size:40px;color:var(--rose);filter:drop-shadow(0 0 10px rgba(201,162,83,.4));margin-top:4px;}
 
 /* ── RSVP ── */
-.rsvp-card{background:var(--card);border-radius:18px;padding:28px 22px;box-shadow:0 6px 36px rgba(42,16,64,.1);}
+.rsvp-card{background:var(--card);border-radius:18px;padding:28px 22px;box-shadow:0 6px 36px rgba(14,35,71,.1);}
 .btn-wa{
   display:flex;align-items:center;justify-content:center;gap:10px;
   width:100%;margin-top:20px;padding:15px;min-height:48px;
@@ -314,7 +314,7 @@ section{padding:60px 26px;}
   text-transform:uppercase;letter-spacing:3px;
   transition:background .3s,transform .3s;
 }
-.btn-wa:hover{background:#1A2A5A;transform:translateY(-2px);}
+.btn-wa:hover{background:#0A1830;transform:translateY(-2px);}
 .rsvp-deadline{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--rose);margin-top:14px;opacity:.8;}
 .rsvp-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--text);line-height:1.8;text-align:center;margin-bottom:6px;letter-spacing:.5px;}
 .rsvp-text strong{color:var(--dark);font-weight:500;}
@@ -334,44 +334,44 @@ footer .fc a{color:inherit;text-decoration:none;}
   filter:drop-shadow(0 6px 20px rgba(0,0,0,.5));
 }
 .vinyl-btn:focus-visible{outline:2px solid var(--rose);outline-offset:6px;border-radius:50%;}
-.vinyl-btn::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:1.5px solid rgba(232,144,184,.55);opacity:0;pointer-events:none;transition:opacity .35s;}
+.vinyl-btn::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:1.5px solid rgba(201,162,83,.55);opacity:0;pointer-events:none;transition:opacity .35s;}
 .vinyl-btn.is-playing::before{opacity:1;animation:vinyl-ring 2.4s ease-out infinite;}
-@keyframes vinyl-ring{0%{box-shadow:0 0 0 0 rgba(232,144,184,.45);}65%{box-shadow:0 0 0 14px rgba(232,144,184,0);}100%{box-shadow:0 0 0 0 rgba(232,144,184,0);}}
+@keyframes vinyl-ring{0%{box-shadow:0 0 0 0 rgba(201,162,83,.45);}65%{box-shadow:0 0 0 14px rgba(201,162,83,0);}100%{box-shadow:0 0 0 0 rgba(201,162,83,0);}}
 .vinyl{width:72px;height:72px;border-radius:50%;position:relative;overflow:hidden;
   background:
     radial-gradient(circle at 30% 28%, rgba(255,255,255,.10) 0%, transparent 45%),
     radial-gradient(circle at 50% 50%,
-      #1A0A2E 0%,#1A0A2E 33%,
-      rgba(255,255,255,.07) 33.5%,#1A0A2E 34%,
-      #1A0A2E 37%,rgba(255,255,255,.04) 37.5%,#1A0A2E 38%,
-      #1A0A2E 41%,rgba(255,255,255,.06) 41.5%,#1A0A2E 42%,
-      #1A0A2E 45%,rgba(255,255,255,.04) 45.5%,#1A0A2E 46%,
-      #1A0A2E 49%,rgba(255,255,255,.05) 49.5%,#1A0A2E 50%,
-      #1A0A2E 53%,rgba(255,255,255,.04) 53.5%,#1A0A2E 54%,
-      #1A0A2E 57%,rgba(255,255,255,.06) 57.5%,#1A0A2E 58%,
-      #1A0A2E 61%,rgba(255,255,255,.04) 61.5%,#1A0A2E 62%,
-      #1A0A2E 65%,rgba(255,255,255,.05) 65.5%,#1A0A2E 66%,
-      #1A0A2E 69%,rgba(255,255,255,.04) 69.5%,#1A0A2E 70%,
-      #1A0A2E 73%,rgba(255,255,255,.06) 73.5%,#1A0A2E 74%,
-      #1A0A2E 78%,rgba(255,255,255,.04) 78.5%,#1A0A2E 79%,
-      #1A0A2E 83%,rgba(255,255,255,.05) 83.5%,#1A0A2E 84%,
-      #1A0A2E 88%,rgba(255,255,255,.04) 88.5%,#1A0A2E 89%,
-      #1A0A2E 93%,rgba(255,255,255,.06) 93.5%,#1A0A2E 94%,
-      #1A0A2E 100%);
+      #0A1424 0%,#0A1424 33%,
+      rgba(255,255,255,.07) 33.5%,#0A1424 34%,
+      #0A1424 37%,rgba(255,255,255,.04) 37.5%,#0A1424 38%,
+      #0A1424 41%,rgba(255,255,255,.06) 41.5%,#0A1424 42%,
+      #0A1424 45%,rgba(255,255,255,.04) 45.5%,#0A1424 46%,
+      #0A1424 49%,rgba(255,255,255,.05) 49.5%,#0A1424 50%,
+      #0A1424 53%,rgba(255,255,255,.04) 53.5%,#0A1424 54%,
+      #0A1424 57%,rgba(255,255,255,.06) 57.5%,#0A1424 58%,
+      #0A1424 61%,rgba(255,255,255,.04) 61.5%,#0A1424 62%,
+      #0A1424 65%,rgba(255,255,255,.05) 65.5%,#0A1424 66%,
+      #0A1424 69%,rgba(255,255,255,.04) 69.5%,#0A1424 70%,
+      #0A1424 73%,rgba(255,255,255,.06) 73.5%,#0A1424 74%,
+      #0A1424 78%,rgba(255,255,255,.04) 78.5%,#0A1424 79%,
+      #0A1424 83%,rgba(255,255,255,.05) 83.5%,#0A1424 84%,
+      #0A1424 88%,rgba(255,255,255,.04) 88.5%,#0A1424 89%,
+      #0A1424 93%,rgba(255,255,255,.06) 93.5%,#0A1424 94%,
+      #0A1424 100%);
   animation:vinyl-spin 3.8s linear infinite paused;
 }
 .vinyl.is-playing{animation-play-state:running;}
 @keyframes vinyl-spin{to{transform:rotate(360deg);}}
-.vinyl-label{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:27px;height:27px;border-radius:50%;background:conic-gradient(from 0deg,#7A2050,#E890B8 18%,#F5C8DC 36%,#E890B8 54%,#7A2050 72%,#E890B8 90%,#F5C8DC,#E890B8,#7A2050);box-shadow:0 0 0 1.5px rgba(232,144,184,.5),inset 0 1px 3px rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;}
+.vinyl-label{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:27px;height:27px;border-radius:50%;background:conic-gradient(from 0deg,#0E2347,#C9A253 18%,#EDD5A0 36%,#C9A253 54%,#0E2347 72%,#C9A253 90%,#EDD5A0,#C9A253,#0E2347);box-shadow:0 0 0 1.5px rgba(201,162,83,.5),inset 0 1px 3px rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;}
 .vinyl-hole{width:7px;height:7px;border-radius:50%;background:#0A0612;box-shadow:inset 0 1px 2px rgba(0,0,0,.8);flex-shrink:0;}
 
 /* ── ENVELOPE ── */
-#envelope-screen{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;opacity:0;background:#2A1040;}
+#envelope-screen{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;opacity:0;background:#0E2347;}
 #env-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2;transform:scale(1.18);}
 #env-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:3;opacity:0;transform:scale(1.18);}
 #env-flash{position:fixed;inset:0;background:#fff;z-index:9999;opacity:0;pointer-events:none;}
-.envelope-hint{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:rgba(245,200,220,0.85);opacity:0;cursor:pointer;white-space:nowrap;z-index:10;}
-.envelope-hint::after{content:'';display:block;width:32px;height:1px;background:linear-gradient(90deg,transparent,rgba(232,144,184,0.7),transparent);margin:10px auto 0;animation:hintPulse 2.2s ease-in-out infinite;}
+.envelope-hint{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:rgba(237,213,160,0.85);opacity:0;cursor:pointer;white-space:nowrap;z-index:10;}
+.envelope-hint::after{content:'';display:block;width:32px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,83,0.7),transparent);margin:10px auto 0;animation:hintPulse 2.2s ease-in-out infinite;}
 @keyframes hintPulse{0%,100%{opacity:.4;width:32px;}50%{opacity:1;width:54px;}}
 </style>
 </head>
@@ -410,11 +410,11 @@ footer .fc a{color:inherit;text-decoration:none;}
   <!-- ORNAMENTO -->
   <div class="orn rv">
     <svg viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#E890B8" stroke-width=".85" opacity=".5"/>
-      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#E890B8" stroke-width=".5" opacity=".22"/>
-      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#E890B8" opacity=".75"/>
-      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#7AACE8" opacity=".45"/>
-      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#9B7ED4" opacity=".45"/>
+      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#C9A253" stroke-width=".85" opacity=".5"/>
+      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#C9A253" stroke-width=".5" opacity=".22"/>
+      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#C9A253" opacity=".75"/>
+      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#4A6A9C" opacity=".45"/>
+      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#D4B88C" opacity=".45"/>
     </svg>
   </div>
 
@@ -442,11 +442,11 @@ footer .fc a{color:inherit;text-decoration:none;}
   <!-- ORNAMENTO -->
   <div class="orn rv">
     <svg viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#E890B8" stroke-width=".85" opacity=".5"/>
-      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#E890B8" stroke-width=".5" opacity=".22"/>
-      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#E890B8" opacity=".75"/>
-      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#7AACE8" opacity=".45"/>
-      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#9B7ED4" opacity=".45"/>
+      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#C9A253" stroke-width=".85" opacity=".5"/>
+      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#C9A253" stroke-width=".5" opacity=".22"/>
+      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#C9A253" opacity=".75"/>
+      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#4A6A9C" opacity=".45"/>
+      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#D4B88C" opacity=".45"/>
     </svg>
   </div>
 
@@ -488,11 +488,11 @@ footer .fc a{color:inherit;text-decoration:none;}
   <!-- ORNAMENTO -->
   <div class="orn rv">
     <svg viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#E890B8" stroke-width=".85" opacity=".5"/>
-      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#E890B8" stroke-width=".5" opacity=".22"/>
-      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#E890B8" opacity=".75"/>
-      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#7AACE8" opacity=".45"/>
-      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#9B7ED4" opacity=".45"/>
+      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#C9A253" stroke-width=".85" opacity=".5"/>
+      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#C9A253" stroke-width=".5" opacity=".22"/>
+      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#C9A253" opacity=".75"/>
+      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#4A6A9C" opacity=".45"/>
+      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#D4B88C" opacity=".45"/>
     </svg>
   </div>
 
@@ -549,11 +549,11 @@ footer .fc a{color:inherit;text-decoration:none;}
   <!-- ORNAMENTO -->
   <div class="orn rv">
     <svg viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#E890B8" stroke-width=".85" opacity=".5"/>
-      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#E890B8" stroke-width=".5" opacity=".22"/>
-      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#E890B8" opacity=".75"/>
-      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#7AACE8" opacity=".45"/>
-      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#9B7ED4" opacity=".45"/>
+      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#C9A253" stroke-width=".85" opacity=".5"/>
+      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#C9A253" stroke-width=".5" opacity=".22"/>
+      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#C9A253" opacity=".75"/>
+      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#4A6A9C" opacity=".45"/>
+      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#D4B88C" opacity=".45"/>
     </svg>
   </div>
 
@@ -570,14 +570,14 @@ footer .fc a{color:inherit;text-decoration:none;}
         <svg class="dc-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true">
           <path d="M35 44 Q34 14 50 11 Q66 14 65 44 Z"/>
           <path d="M10 48 Q28 40 50 44 Q72 40 90 48 Q84 54 50 51 Q16 54 10 48 Z"/>
-          <rect x="35" y="40" width="30" height="4.5" rx="1.5" fill="#E890B8"/>
+          <rect x="35" y="40" width="30" height="4.5" rx="1.5" fill="#C9A253"/>
           <circle cx="50" cy="64" r="14"/>
           <rect x="45" y="77" width="10" height="8" rx="2"/>
           <path d="M18 85 Q25 80 40 82 L42 122 L58 122 L60 82 Q75 80 82 85 L83 136 L17 136 Z"/>
           <path d="M40 82 L36 106 L50 100 L64 106 L60 82 L50 86 Z" fill="var(--bg)" opacity=".22"/>
-          <polygon points="48,84 45,105 50,101 55,105 52,84" fill="#E890B8" opacity=".55"/>
+          <polygon points="48,84 45,105 50,101 55,105 52,84" fill="#C9A253" opacity=".55"/>
           <rect x="19" y="134" width="62" height="5" rx="2"/>
-          <rect x="42" y="131" width="16" height="11" rx="2" fill="#7AACE8"/>
+          <rect x="42" y="131" width="16" height="11" rx="2" fill="#4A6A9C"/>
           <path d="M19 138 L26 194 L47 191 L50 170 L53 191 L74 194 L81 138 Z"/>
           <path d="M26 192 L18 200 L46 200 L47 192 Z"/>
           <path d="M74 192 L53 192 L54 200 L82 200 Z"/>
@@ -597,11 +597,11 @@ footer .fc a{color:inherit;text-decoration:none;}
           <path d="M32 52 Q20 63 18 80" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/>
           <path d="M68 52 Q80 63 82 80" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/>
           <path d="M32 48 Q37 44 46 47 L47 80 L53 80 L54 47 Q63 44 68 48 L70 84 L30 84 Z"/>
-          <rect x="30" y="82" width="40" height="7" rx="3" fill="#E890B8" opacity=".65"/>
+          <rect x="30" y="82" width="40" height="7" rx="3" fill="#C9A253" opacity=".65"/>
           <path d="M30 88 Q16 118 4 200 L96 200 Q84 118 70 88 Z"/>
-          <path d="M38 89 Q26 130 16 200" stroke="rgba(232,144,184,.28)" stroke-width="1.5" fill="none"/>
-          <path d="M50 89 L50 200" stroke="rgba(232,144,184,.22)" stroke-width="1.5" fill="none"/>
-          <path d="M62 89 Q74 130 84 200" stroke="rgba(232,144,184,.28)" stroke-width="1.5" fill="none"/>
+          <path d="M38 89 Q26 130 16 200" stroke="rgba(201,162,83,.28)" stroke-width="1.5" fill="none"/>
+          <path d="M50 89 L50 200" stroke="rgba(201,162,83,.22)" stroke-width="1.5" fill="none"/>
+          <path d="M62 89 Q74 130 84 200" stroke="rgba(201,162,83,.28)" stroke-width="1.5" fill="none"/>
         </svg>
         <div class="dc-fig-name">Dama</div>
         <div class="dc-fig-hint">Vestido Formal<br>Estilo Elegante</div>
@@ -613,11 +613,11 @@ footer .fc a{color:inherit;text-decoration:none;}
   <!-- ORNAMENTO -->
   <div class="orn rv">
     <svg viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#E890B8" stroke-width=".85" opacity=".5"/>
-      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#E890B8" stroke-width=".5" opacity=".22"/>
-      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#E890B8" opacity=".75"/>
-      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#7AACE8" opacity=".45"/>
-      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#9B7ED4" opacity=".45"/>
+      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#C9A253" stroke-width=".85" opacity=".5"/>
+      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#C9A253" stroke-width=".5" opacity=".22"/>
+      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#C9A253" opacity=".75"/>
+      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#4A6A9C" opacity=".45"/>
+      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#D4B88C" opacity=".45"/>
     </svg>
   </div>
 
@@ -684,11 +684,11 @@ footer .fc a{color:inherit;text-decoration:none;}
   <!-- ORNAMENTO -->
   <div class="orn rv">
     <svg viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#E890B8" stroke-width=".85" opacity=".5"/>
-      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#E890B8" stroke-width=".5" opacity=".22"/>
-      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#E890B8" opacity=".75"/>
-      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#7AACE8" opacity=".45"/>
-      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#9B7ED4" opacity=".45"/>
+      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#C9A253" stroke-width=".85" opacity=".5"/>
+      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#C9A253" stroke-width=".5" opacity=".22"/>
+      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#C9A253" opacity=".75"/>
+      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#4A6A9C" opacity=".45"/>
+      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#D4B88C" opacity=".45"/>
     </svg>
   </div>
 
@@ -707,25 +707,25 @@ footer .fc a{color:inherit;text-decoration:none;}
                 <stop offset="100%" stop-color="#fdf6fb"/>
               </linearGradient>
             </defs>
-            <rect x="18" y="52" width="224" height="132" rx="10" fill="url(#hc-env-fill)" stroke="rgba(232,144,184,.7)" stroke-width="1.4"/>
-            <path d="M18 184 L130 110 L242 184" stroke="rgba(232,144,184,.5)" stroke-width="1" fill="none"/>
-            <line x1="90"  y1="30" x2="90"  y2="20" stroke="#E890B8" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="130" y1="24" x2="130" y2="14" stroke="#E890B8" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
-            <line x1="170" y1="30" x2="170" y2="20" stroke="#E890B8" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="110" y1="18" x2="110" y2="10" stroke="#7AACE8" stroke-width="1" stroke-linecap="round" opacity=".4"/>
-            <line x1="150" y1="18" x2="150" y2="10" stroke="#9B7ED4" stroke-width="1" stroke-linecap="round" opacity=".4"/>
-            <circle cx="130" cy="118" r="16" fill="rgba(232,144,184,.18)" stroke="rgba(232,144,184,.55)" stroke-width="1"/>
-            <text x="130" y="123" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#2A4A8A" opacity=".8">H&amp;C</text>
+            <rect x="18" y="52" width="224" height="132" rx="10" fill="url(#hc-env-fill)" stroke="rgba(201,162,83,.7)" stroke-width="1.4"/>
+            <path d="M18 184 L130 110 L242 184" stroke="rgba(201,162,83,.5)" stroke-width="1" fill="none"/>
+            <line x1="90"  y1="30" x2="90"  y2="20" stroke="#C9A253" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+            <line x1="130" y1="24" x2="130" y2="14" stroke="#C9A253" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
+            <line x1="170" y1="30" x2="170" y2="20" stroke="#C9A253" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+            <line x1="110" y1="18" x2="110" y2="10" stroke="#4A6A9C" stroke-width="1" stroke-linecap="round" opacity=".4"/>
+            <line x1="150" y1="18" x2="150" y2="10" stroke="#D4B88C" stroke-width="1" stroke-linecap="round" opacity=".4"/>
+            <circle cx="130" cy="118" r="16" fill="rgba(201,162,83,.18)" stroke="rgba(201,162,83,.55)" stroke-width="1"/>
+            <text x="130" y="123" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#0E2347" opacity=".8">H&amp;C</text>
           </svg>
           <div class="env-flap-wrap" aria-hidden="true">
             <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%">
               <defs>
                 <linearGradient id="hc-flap-fill" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#F5C8DC"/>
+                  <stop offset="0%" stop-color="#EDD5A0"/>
                   <stop offset="100%" stop-color="#f9eef5"/>
                 </linearGradient>
               </defs>
-              <path d="M0 0 L112 86 L224 0 Z" fill="url(#hc-flap-fill)" stroke="rgba(232,144,184,.7)" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M0 0 L112 86 L224 0 Z" fill="url(#hc-flap-fill)" stroke="rgba(201,162,83,.7)" stroke-width="1.5" stroke-linejoin="round"/>
             </svg>
           </div>
         </div>
@@ -748,11 +748,11 @@ footer .fc a{color:inherit;text-decoration:none;}
   <!-- ORNAMENTO -->
   <div class="orn rv">
     <svg viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#E890B8" stroke-width=".85" opacity=".5"/>
-      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#E890B8" stroke-width=".5" opacity=".22"/>
-      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#E890B8" opacity=".75"/>
-      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#7AACE8" opacity=".45"/>
-      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#9B7ED4" opacity=".45"/>
+      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#C9A253" stroke-width=".85" opacity=".5"/>
+      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#C9A253" stroke-width=".5" opacity=".22"/>
+      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#C9A253" opacity=".75"/>
+      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#4A6A9C" opacity=".45"/>
+      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#D4B88C" opacity=".45"/>
     </svg>
   </div>
 
@@ -764,7 +764,7 @@ footer .fc a{color:inherit;text-decoration:none;}
     <div class="album-qr-wrap">
       <div class="album-qr-frame">
         <!-- PENDIENTE: link álbum real -->
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&color=2A4A8A&bgcolor=F8F3FC&data=https://boda-hector-y-cecilia.vercel.app" alt="QR Álbum de fotos" width="180" height="180" loading="lazy">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&color=0E2347&bgcolor=F4EDE0&data=https://boda-hector-y-cecilia.vercel.app" alt="QR Álbum de fotos" width="180" height="180" loading="lazy">
       </div>
     </div>
     <div class="album-hashtag">#CeciliayHector</div>
@@ -773,11 +773,11 @@ footer .fc a{color:inherit;text-decoration:none;}
   <!-- ORNAMENTO -->
   <div class="orn rv">
     <svg viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#E890B8" stroke-width=".85" opacity=".5"/>
-      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#E890B8" stroke-width=".5" opacity=".22"/>
-      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#E890B8" opacity=".75"/>
-      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#7AACE8" opacity=".45"/>
-      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#9B7ED4" opacity=".45"/>
+      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#C9A253" stroke-width=".85" opacity=".5"/>
+      <path d="M6 21 Q44 33 85 21 T164 21" stroke="#C9A253" stroke-width=".5" opacity=".22"/>
+      <polygon points="85,4 88.1,13.8 98.5,13.8 90.2,19.6 93.3,29.4 85,23.6 76.7,29.4 79.8,19.6 71.5,13.8 81.9,13.8" fill="#C9A253" opacity=".75"/>
+      <polygon points="32,10 33.2,14 37.5,14 34,16.8 35.2,20.8 32,18 28.8,20.8 30,16.8 26.5,14 30.8,14" fill="#4A6A9C" opacity=".45"/>
+      <polygon points="138,10 139.2,14 143.5,14 140,16.8 141.2,20.8 138,18 134.8,20.8 136,16.8 132.5,14 136.8,14" fill="#D4B88C" opacity=".45"/>
     </svg>
   </div>
 
@@ -892,7 +892,7 @@ function launchPage(){
 /* ══════ STARS ══════ */
 function initStars(){
   var layer = document.getElementById('stars');
-  var colors = ['#E890B8','#F5C8DC','#7AACE8','#9B7ED4','#F090B0','#A8CCF0'];
+  var colors = ['#C9A253','#EDD5A0','#4A6A9C','#D4B88C','#E8C07A','#8AA4C8'];
   for(var i=0;i<24;i++){
     var s=document.createElement('div');
     s.className='star';
@@ -982,7 +982,7 @@ function initDressCode(){
       if(!entered){entered=true;
         gsap.fromTo('.dc-fig',{opacity:0,y:28},{opacity:1,y:0,duration:1,stagger:.22,ease:'power2.out'});
         gsap.fromTo('.dc-divider',{scaleY:0,opacity:0},{scaleY:1,opacity:1,duration:1.2,ease:'power2.out',delay:.15});
-        gsap.to('.dc-svg',{filter:'drop-shadow(0 0 12px rgba(232,144,184,.55))',duration:1.6,ease:'power2.out',delay:.5,yoyo:true,repeat:-1,repeatDelay:1.6});
+        gsap.to('.dc-svg',{filter:'drop-shadow(0 0 12px rgba(201,162,83,.55))',duration:1.6,ease:'power2.out',delay:.5,yoyo:true,repeat:-1,repeatDelay:1.6});
       }
       if(!starTimer) starTimer=setInterval(spawnStar,320);
     },
@@ -1026,7 +1026,7 @@ var prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
     var sparkLayer=document.getElementById('wheel-spark-layer');
     var stageEl=document.querySelector('.wheel-stage');
     var lastSparkMs=0;
-    var SPARK_COLORS=['#E890B8','#F5C8DC','#7AACE8','#FFFFFF','#9B7ED4'];
+    var SPARK_COLORS=['#C9A253','#EDD5A0','#4A6A9C','#FFFFFF','#D4B88C'];
     var STAR_PATH='polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)';
     function spawnWheelSparks(scrollVel){
       var now=performance.now();
