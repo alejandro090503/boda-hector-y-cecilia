@@ -292,6 +292,11 @@ section{padding:60px 26px;}
 .env-interactive.open~.env-tap-hint{opacity:0;pointer-events:none;}
 @keyframes env-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
 
+/* ── VENUE PHOTO ── */
+.venue-photo-wrap{margin:-28px -22px 20px;border-radius:18px 18px 0 0;overflow:hidden;line-height:0;}
+.venue-photo{width:100%;height:200px;object-fit:cover;object-position:center;display:block;transition:transform .6s ease;}
+.loc-card:hover .venue-photo{transform:scale(1.04);}
+
 /* ── MAP EMBED ── */
 .map-wrap{margin:16px 0 4px;border-radius:10px;overflow:hidden;line-height:0;box-shadow:0 4px 18px rgba(14,35,71,.12);}
 .map-wrap iframe{display:block;width:100%;height:200px;border:0;}
@@ -455,6 +460,9 @@ footer .fc a{color:inherit;text-decoration:none;}
     <h2 class="sec-title rv">Ubicaciones</h2>
 
     <div class="loc-card rv">
+      <div class="venue-photo-wrap">
+        <img src="./venue-ceremonia.jpg" alt="Playa Delfín — ceremonia" class="venue-photo" loading="lazy">
+      </div>
       <div class="lt">Ceremonia</div>
       <div class="ls">Ceremonia Religiosa</div>
       <div class="lh">4:00 pm</div>
@@ -466,6 +474,9 @@ footer .fc a{color:inherit;text-decoration:none;}
     </div>
 
     <div class="loc-card rv">
+      <div class="venue-photo-wrap">
+        <img src="./venue-recepcion.jpg" alt="Casa Raga — recepción" class="venue-photo" loading="lazy">
+      </div>
       <div class="lt">Recepción</div>
       <div class="ls">Cena &amp; Fiesta</div>
       <div class="lh">8:00 pm</div>
